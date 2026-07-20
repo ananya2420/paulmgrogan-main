@@ -1,7 +1,7 @@
-
+import Link from 'next/link'; 
+import Image from 'next/image'; 
 import logo from '../../../assets/logo.png'; 
 import paulImage from '../../../assets/paul.png'; 
-import Image from 'next/image'; 
 
 const Navbar = () => {
   return (
@@ -9,23 +9,24 @@ const Navbar = () => {
       {/* Top Navbar Section */}
       <nav className="flex items-center justify-between p-6 border-b">
         <div className="flex items-center">
-         
           <Image src={logo} alt="Brand Logo" width={120} height={40} />
         </div>
+        
+        {/* Navigation Links */}
         <div className="flex gap-6 font-medium text-gray-700">
-          <a href="#" className="hover:text-blue-600">SOME</a>
-          <a href="#" className="hover:text-blue-600">RESUME</a>
-          <a href="#" className="hover:text-blue-600">ONLINE PROFILE</a>
-          <a href="#" className="hover:text-blue-600">COMMUNITY</a>
-          <a href="#" className="hover:text-blue-600">BRAND DIRECTORY</a>
-          <a href="#" className="hover:text-blue-600">CONTACT</a>
+          <Link href="/" className="hover:text-blue-600 transition-colors">HOME</Link>
+          <Link href="/resume" className="hover:text-blue-600 transition-colors">RESUME</Link>
+          <Link href="/profile" className="hover:text-blue-600 transition-colors">ONLINE PROFILE</Link>
+          <Link href="/community" className="hover:text-blue-600 transition-colors">COMMUNITY</Link>
+          <Link href="/brand-directory" className="hover:text-blue-600 transition-colors">BRAND DIRECTORY</Link>
+          <Link href="/contact" className="hover:text-blue-600 transition-colors">CONTACT</Link>
         </div>
       </nav>
 
-      {/* Hero Header Content: Two Columns */}
+      {/* Hero Header Content */}
       <div className="container mx-auto px-6 py-16 flex items-center justify-between gap-12">
         
-        {/* --- LEFT COLUMN: Text and Buttons --- */}
+        {/* LEFT COLUMN: Text and Buttons */}
         <div className="flex-1 text-left">
           <h1 className="text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
             CANDIDATE DISTRICT 5 COUNTY COMMISSIONER.
@@ -45,10 +46,9 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* --- RIGHT COLUMN: Image --- */}
+        {/* RIGHT COLUMN: Image */}
         <div className="flex-1 flex justify-center items-center">
           <div className="relative w-full h-auto max-w-lg">
-            {/* Next.js Image component handles optimization */}
             <Image 
               src={paulImage} 
               alt="Candidate Paul" 
